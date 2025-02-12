@@ -144,5 +144,12 @@ namespace boost { namespace multiprecision {
 #define BOOST_MP_NO_CONSTEXPR_DETECTION
 #endif
 
+#if defined(__cpp_constexpr_dynamic_alloc) && __cpp_constexpr_dynamic_alloc >= 201907L
+#define BOOST_MP_ALLOC_CONSTEXPR constexpr
+
+#else
+#define BOOST_MP_ALLOC_CONSTEXPR
+#endif
+
 
 #endif // BOOST_MP_STANDALONE_CONFIG_HPP
